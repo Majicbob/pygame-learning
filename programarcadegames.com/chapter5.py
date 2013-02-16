@@ -5,7 +5,8 @@
  
 # Explanation video: http://youtu.be/vRB_983kUMc
  
-import pygame
+import pygame, sys, os, random
+from pygame.locals import *
  
 # Define some colors
 black    = (   0,   0,   0)
@@ -49,6 +50,8 @@ while done==False:
     screen.fill(white)
 
     pygame.draw.line(screen, green, [0,0], [100,100], 5)
+    pygame.draw.line(screen, red,   [110,0], [100,200], 5)
+    pygame.draw.line(screen, black, [0,110], [200,100], 5)
      
     # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
      
@@ -61,4 +64,4 @@ while done==False:
 # Close the window and quit.
 # If you forget this line, the program will 'hang'
 # on exit if running from IDLE.
-pygame.quit ()
+pygame.quit()
