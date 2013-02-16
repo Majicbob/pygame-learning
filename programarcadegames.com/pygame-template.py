@@ -5,7 +5,8 @@
  
 # Explanation video: http://youtu.be/vRB_983kUMc
  
-import pygame
+import pygame, sys, os, random, math
+from pygame.locals import *
  
 # Define some colors
 black    = (   0,   0,   0)
