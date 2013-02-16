@@ -13,6 +13,7 @@ black    = (   0,   0,   0)
 white    = ( 255, 255, 255)
 green    = (   0, 255,   0)
 red      = ( 255,   0,   0)
+blue     = (   0,   0, 255)
  
 pygame.init()
   
@@ -52,7 +53,16 @@ while done==False:
     pygame.draw.line(screen, green, [0,0], [100,100], 5)
     pygame.draw.line(screen, red,   [110,0], [100,200], 5)
     pygame.draw.line(screen, black, [0,110], [200,100], 5)
-     
+    
+    for y_offset in range(0, 100, 10):
+        pygame.draw.line(screen, blue, [0, 10 + y_offset], [100, 110 + y_offset], 5)
+        
+    for y_offset in range(0, 100, 5):
+        pygame.draw.line(screen, blue, [10 + y_offset, 0], [200, 210 + y_offset], 1)
+    
+    for y_offset in range(0, 100, 5):
+        pygame.draw.line(screen, red, [10 + y_offset, 100 - y_offset], [400, 410 + y_offset], 1)
+        
     # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
      
     # Go ahead and update the screen with what we've drawn.
