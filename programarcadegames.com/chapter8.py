@@ -59,19 +59,10 @@ while done == False:
 
 
     # ALL GAME LOGIC SHOULD GO BELOW THIS COMMENT
-
-    # ALL GAME LOGIC SHOULD GO ABOVE THIS COMMENT
-    # ######
-
-
-    # ALL CODE TO DRAW SHOULD GO BELOW THIS COMMENT
-    # ######
-
-    # First, clear the screen to white. Don't put other drawing commands
-    # above this, or they will be erased with this command.
-    screen.fill(black)
-
-    # keep on screen
+    # keep rect on screen
+    rect_x += change_x
+    rect_y += change_y
+    
     if (rect_x > max_x):
         change_x = change_x * -1
     if (rect_x < 0):
@@ -99,20 +90,13 @@ while done == False:
 
     if (g == 0 and b > 0):
         b -= 1
-
-    pygame.draw.rect(screen, (r, g, b), [rect_x, rect_y, 50, 50])
-    rect_x += change_x
-    rect_y += change_y
-
-    rgb = "{}, {}, {}".format(r, g, b)
-    text = font.render(rgb, True, white)
-    screen.blit(text, [0,0])
-    
-    # snow 
-    for i in range(len(star_list)):
-        # Draw the star
-        pygame.draw.circle(screen,white,star_list[i],2)
         
+
+    rgb  = "{}, {}, {}".format(r, g, b)
+    text = font.render(rgb, True, white)
+    
+    # move snow
+    for i in range(len(star_list)):        
         # move down one
         star_list[i][1] += 1
         
@@ -129,6 +113,29 @@ while done == False:
         if (star_list[i][1] > screen.get_height()):
             star_list[i][1] = random.randrange(-50, -10)
             star_list[i][0] = random.randrange(0, screen.get_width())
+    
+    # ALL GAME LOGIC SHOULD GO ABOVE THIS COMMENT
+    # ######
+
+
+    # ALL CODE TO DRAW SHOULD GO BELOW THIS COMMENT
+    # ######
+
+    # First, clear the screen to white. Don't put other drawing commands
+    # above this, or they will be erased with this command.
+    screen.fill(black)
+
+
+    # draw rect 
+    pygame.draw.rect(screen, (r, g, b), [rect_x, rect_y, 50, 50])
+    
+    # print (R,G,B)
+    screen.blit(text, [0,0])
+    
+    # snow 
+    for i in range(len(star_list)):
+        pygame.draw.circle(screen,white,star_list[i],2)
+
 
     # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
 
