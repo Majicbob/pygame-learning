@@ -52,7 +52,7 @@ while done==False:
     # above this, or they will be erased with this command.
     screen.fill(white)
 
-    pygame.draw.line(screen, green, [0,0], [100,100], 5)
+
 
     # ALL CODE TO DRAW SHOULD GO ABOVE THIS COMMENT
 
